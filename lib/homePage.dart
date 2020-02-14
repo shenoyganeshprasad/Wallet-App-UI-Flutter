@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wallet_app/widgets/roundedButton.dart';
 import 'widgets/cardWidget.dart';
+import 'widgets/transferHistoryWidget.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,6 +31,7 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.only(left: 20.0, top: 20.0),
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
               child: Column(
@@ -107,6 +109,35 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
+            ),
+            SizedBox(height: 30.0),
+            Text(
+              "TRANSFER HISTORY",
+              style: TextStyle(color: Colors.grey),
+            ),
+            SizedBox(height: 20.0),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                TransterHistorWidget(
+                  iconData: LineAwesomeIcons.download,
+                  text: "Received",
+                  date: "15 Aug",
+                  coins: "0.0002 LTC",
+                  dollars: "\$1.49",
+                  color: Colors.green[400]
+                ),
+                SizedBox(height: 20.0),
+                TransterHistorWidget(
+                  iconData: LineAwesomeIcons.upload,
+                  text: "Sent",
+                  date: "13 Aug",
+                  coins: "-\$0.0004 LTC",
+                  dollars: "-\$2.98",
+                  color: Colors.pink[400],
+                ),
+              ],
             ),
           ],
         ),
