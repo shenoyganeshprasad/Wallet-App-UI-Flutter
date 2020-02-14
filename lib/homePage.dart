@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wallet_app/widgets/roundedButton.dart';
 import 'widgets/cardWidget.dart';
+import 'package:line_awesome_icons/line_awesome_icons.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -80,7 +81,33 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             SizedBox(height: 30.0),
-            RoundedButton(),
+            Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  RoundedButton(
+                    iconData: LineAwesomeIcons.download,
+                    color: Colors.green[300],
+                  ),
+                  // SizedBox(width: 20.0),
+                  RoundedButton(
+                    iconData: LineAwesomeIcons.upload,
+                    color: Colors.pink[300],
+                  ),
+                  // SizedBox(width: 20.0),
+                  RoundedButton(
+                    iconData: LineAwesomeIcons.credit_card,
+                    color: Colors.white,
+                  ),
+                  // SizedBox(width: 20.0),
+                  RoundedButton(
+                    iconData: LineAwesomeIcons.undo,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
