@@ -19,12 +19,12 @@ class TransterHistorWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
         RoundedButton(
           iconData: iconData,
           color: Colors.white,
         ),
+        SizedBox(width: 20.0,),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -39,6 +39,7 @@ class TransterHistorWidget extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(width: 70.0),
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
