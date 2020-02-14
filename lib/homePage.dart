@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wallet_app/widgets/roundedButton.dart';
+import 'widgets/cardWidget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,8 +12,77 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF131313),
-      body: Center(
-        child: Text("BODY"),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF131313),
+        elevation: 0.0,
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: Icon(
+              Icons.more_horiz,
+              size: 40.0,
+            ),
+          ),
+        ],
+      ),
+      body: Padding(
+        padding: EdgeInsets.only(left: 20.0, top: 20.0),
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'BALANCE',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 18.0,
+                    ),
+                  ),
+                  SizedBox(height: 10.0),
+                  Text(
+                    "\$3,020.09",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 32.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 20.0),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: <Widget>[
+                  CardWidget(
+                    gradientBegin: Alignment.topLeft,
+                    gradiendEnd: Alignment.bottomRight,
+                    colors: [const Color(0xFFf3a8b0), const Color(0xFFc088d6)],
+                    text: "Litecoin",
+                    coins: "14.3910 LCT",
+                    dollars: "\$915.39",
+                  ),
+                  SizedBox(width: 10.0),
+                  CardWidget(
+                    gradientBegin: Alignment.topLeft,
+                    gradiendEnd: Alignment.bottomLeft,
+                    colors: [const Color(0xFFadf6de), const Color(0xFF6eead2)],
+                    text: "Ripple",
+                    coins: "3001.2301 XRP",
+                    dollars: "\$759.34",
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 30.0),
+            RoundedButton(),
+          ],
+        ),
       ),
     );
   }
